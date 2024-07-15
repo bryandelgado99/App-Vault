@@ -66,43 +66,83 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 Widget cardCompose(BuildContext context) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    mainAxisSize: MainAxisSize.min,
-    children: [
-      cardElement(
-          onTap: () {
-            GoRouter.of(context).go('/home');
-          },
-          title: "Plantilla de juegos",
-          imagePath: 'lib/assets/dados.jpg',
-          description:
-              "Una plantilla diseñada para probar el desarrollo de videojuegos\ncon Flutter."),
-      const SizedBox(width: 25,),
-      cardElement(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context)=> const MySplashHomePage(title: "Android Center"))
-            );
-          },
-          title: "Android Splash Screen",
-          imagePath: 'lib/assets/androidIcon.png',
-          description:
-              "Un ejemplo de aplicación básica de Flutter, incorporando\nun contador y un Clipper."),
-      const SizedBox(width: 25,),
-      cardElement(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context)=> const App())
-            );
-          },
-          title: "Material You Demostration",
-          imagePath: 'lib/assets/material_you.jpeg',
-          description:
-              "Conoce las novedades del lenguaje de diseño de Google\nintegrado desde Android 12"),
-    ],
+  return SingleChildScrollView(
+    scrollDirection: Axis.horizontal,
+    child: Row(
+      children: [
+        cardElement(
+            onTap: () {
+              GoRouter.of(context).go('/home');
+            },
+            title: "Plantilla de juegos",
+            imagePath: 'lib/assets/dados.jpg',
+            description:
+                "Una plantilla diseñada para probar el desarrollo de videojuegos\ncon Flutter."),
+        const SizedBox(
+          width: 25,
+        ),
+        cardElement(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          const MySplashHomePage(title: "Android Center")));
+            },
+            title: "Android Splash Screen",
+            imagePath: 'lib/assets/androidIcon.png',
+            description:
+                "Un ejemplo de aplicación básica de Flutter, incorporando\nun contador y un Clipper."),
+        const SizedBox(
+          width: 25,
+        ),
+        cardElement(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const App()));
+            },
+            title: "Material You Demostration",
+            imagePath: 'lib/assets/material_you.jpeg',
+            description:
+                "Conoce las novedades del lenguaje de diseño de Google\nintegrado desde Android 12"),
+        cardElement(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const App()));
+            },
+            title: "App 4",
+            imagePath: 'lib/assets/material_you.jpeg',
+            description:
+                "Conoce las novedades del lenguaje de diseño de Google\nintegrado desde Android 12"),
+        cardElement(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const App()));
+            },
+            title: "App 5",
+            imagePath: 'lib/assets/material_you.jpeg',
+            description:
+                "Conoce las novedades del lenguaje de diseño de Google\nintegrado desde Android 12"),
+        cardElement(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const App()));
+            },
+            title: "App 6",
+            imagePath: 'lib/assets/material_you.jpeg',
+            description:
+                "Conoce las novedades del lenguaje de diseño de Google\nintegrado desde Android 12"),
+        cardElement(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const App()));
+            },
+            title: "App 7",
+            imagePath: 'lib/assets/material_you.jpeg',
+            description:
+                "Conoce las novedades del lenguaje de diseño de Google\nintegrado desde Android 12"),
+      ],
+    ),
   );
 }
 
@@ -136,7 +176,7 @@ class _cardElementState extends State<cardElement> {
             SizedBox(
               width: 400,
               height: 200,
-                child: Image.asset(
+              child: Image.asset(
                 widget.imagePath,
                 fit: BoxFit.cover,
                 scale: 2.5,
